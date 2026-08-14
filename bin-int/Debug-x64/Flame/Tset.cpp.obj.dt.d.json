@@ -1,0 +1,20 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\vs2026project\\flame\\flame\\src\\tset.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "f:\\vs2026project\\flame\\flame\\src\\test.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stdio.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\vcruntime.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\sal.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\concurrencysal.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\vadefs.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_stdio_config.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
