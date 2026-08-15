@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\vs2026project\\flame\\flame\\src\\flame.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "f:\\vs2026project\\flame\\flame\\src\\core\\application.h",
+            "f:\\vs2026project\\flame\\flame\\src\\core\\core.h",
+            "f:\\vs2026project\\flame\\flame\\src\\core\\entrypoint.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

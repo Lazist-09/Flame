@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "F:\\VS2026Project\\Flame\\Flame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|F:\\VS2026Project\\Flame\\Flame\\src\\Tset.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|solutionrelative:src\\Tset.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|F:\\VS2026Project\\Flame\\Flame\\src\\Core\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|solutionrelative:src\\Core\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|F:\\VS2026Project\\Flame\\Flame\\src\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|solutionrelative:src\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|F:\\VS2026Project\\Flame\\Flame\\src\\Core\\EntryPoint.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|solutionrelative:src\\Core\\EntryPoint.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1CA8D2EA-7AE3-4A9C-A289-183D3BE0172A}|..\\Example\\SandBox\\SandBox.vcxproj|F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1CA8D2EA-7AE3-4A9C-A289-183D3BE0172A}|..\\Example\\SandBox\\SandBox.vcxproj|F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\SandboxApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|F:\\VS2026Project\\Flame\\Flame\\src\\Flame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BAF52DAF-D1C9-4397-A450-731DCB833396}|Flame.vcxproj|solutionrelative:src\\Flame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,45 +25,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Tset.cpp",
-              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Flame\\src\\Tset.cpp",
-              "RelativeDocumentMoniker": "src\\Tset.cpp",
-              "ToolTip": "F:\\VS2026Project\\Flame\\Flame\\src\\Tset.cpp",
-              "RelativeToolTip": "src\\Tset.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-08-14T14:59:11.553Z",
+              "DocumentIndex": 1,
+              "Title": "EntryPoint.h",
+              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Flame\\src\\Core\\EntryPoint.h",
+              "RelativeDocumentMoniker": "src\\Core\\EntryPoint.h",
+              "ToolTip": "F:\\VS2026Project\\Flame\\Flame\\src\\Core\\EntryPoint.h",
+              "RelativeToolTip": "src\\Core\\EntryPoint.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-08-15T10:59:34.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Test.h",
-              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Flame\\src\\Test.h",
-              "RelativeDocumentMoniker": "src\\Test.h",
-              "ToolTip": "F:\\VS2026Project\\Flame\\Flame\\src\\Test.h",
-              "RelativeToolTip": "src\\Test.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Core.h",
+              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Flame\\src\\Core\\Core.h",
+              "RelativeDocumentMoniker": "src\\Core\\Core.h",
+              "ToolTip": "F:\\VS2026Project\\Flame\\Flame\\src\\Core\\Core.h",
+              "RelativeToolTip": "src\\Core\\Core.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-08-14T14:58:57.754Z",
+              "WhenOpened": "2026-08-15T10:37:23.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Application.cpp",
-              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\Application.cpp",
-              "RelativeDocumentMoniker": "..\\Example\\SandBox\\src\\Application.cpp",
-              "ToolTip": "F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\Application.cpp",
-              "RelativeToolTip": "..\\Example\\SandBox\\src\\Application.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Title": "SandboxApp.cpp",
+              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\SandboxApp.cpp",
+              "RelativeDocumentMoniker": "..\\Example\\SandBox\\src\\SandboxApp.cpp",
+              "ToolTip": "F:\\VS2026Project\\Flame\\Example\\SandBox\\src\\SandboxApp.cpp",
+              "RelativeToolTip": "..\\Example\\SandBox\\src\\SandboxApp.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-08-14T15:07:25.728Z",
+              "WhenOpened": "2026-08-15T10:24:55.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Flame.h",
+              "DocumentMoniker": "F:\\VS2026Project\\Flame\\Flame\\src\\Flame.h",
+              "RelativeDocumentMoniker": "src\\Flame.h",
+              "ToolTip": "F:\\VS2026Project\\Flame\\Flame\\src\\Flame.h",
+              "RelativeToolTip": "src\\Flame.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-08-15T10:24:08.277Z",
               "EditorCaption": ""
             }
           ]
