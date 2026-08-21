@@ -26,3 +26,26 @@
 *.log
 *.cache
 *.ipch
+
+# Visual Studio
+.vs/
+*.user
+*.filters
+*.sln.docstates
+
+# Build outputs
+bin/
+bin-int/
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.idb
+*.obj
+*.tlog
+*.recipe
+*.log
+*.exp
+*.lib
+*.lastbuildstate
+*.Build.CppClean.log
