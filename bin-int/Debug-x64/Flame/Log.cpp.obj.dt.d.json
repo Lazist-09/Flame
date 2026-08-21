@@ -1,11 +1,9 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "f:\\vs2026project\\flame\\flame\\src\\flame.h",
+        "Source": "f:\\vs2026project\\flame\\flame\\src\\core\\log.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "f:\\vs2026project\\flame\\flame\\src\\core\\application.h",
-            "f:\\vs2026project\\flame\\flame\\src\\core\\core.h",
             "f:\\vs2026project\\flame\\flame\\src\\core\\log.h",
             "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\memory",
             "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\yvals_core.h",
@@ -102,6 +100,7 @@
             "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\ctime",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\time.h",
             "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\xatomic_wait.h",
+            "f:\\vs2026project\\flame\\flame\\src\\core\\core.h",
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\spdlog.h",
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\common.h",
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\details\\null_mutex.h",
@@ -334,7 +333,8 @@
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\details\\synchronous_factory.h",
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\version.h",
             "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\spdlog-inl.h",
-            "f:\\vs2026project\\flame\\flame\\src\\core\\entrypoint.h"
+            "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\sinks\\stdout_color_sinks.h",
+            "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\sinks\\stdout_color_sinks-inl.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

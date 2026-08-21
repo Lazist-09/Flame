@@ -1,0 +1,3 @@
+[submodule "Flame/vendor/spdlog"]
+	path = Flame/vendor/spdlog
+	url = https://github.com/gabime/spdlog

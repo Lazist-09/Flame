@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "F:\\VS2026Project\\Flame\\Flame\\bin-int\\Debug-x64\\Flame\\Log.obj",
+            "outputs": [
+                "F:\\VS2026Project\\Flame\\Flame\\bin-int\\Debug-x64\\Flame\\Log.cpp.obj.dt.module.json",
+                "F:\\VS2026Project\\Flame\\Flame\\bin-int\\Debug-x64\\Flame\\Log.cpp.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

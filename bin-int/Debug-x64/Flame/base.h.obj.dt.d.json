@@ -1,0 +1,34 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\vs2026project\\flame\\flame\\flame\\vendor\\spdlog\\include\\spdlog\\fmt\\bundled\\base.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\limits.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\vcruntime.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\sal.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\concurrencysal.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\vadefs.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stdio.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstdio.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_stdio_config.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\string.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memory.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_memcpy_s.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\errno.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\vcruntime_string.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_wstring.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\type_traits",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\yvals_core.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\xkeycheck.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\cstddef",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\stddef.h",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\xtr1common",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\cstdint",
+            "d:\\visual_studio2026\\insider\\vc\\tools\\msvc\\14.51.36231\\include\\stdint.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

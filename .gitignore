@@ -1,0 +1,28 @@
+# ========== Visual Studio 智能提示缓存 ==========
+# ipch 文件（IntelliSense 预编译头缓存）
+*.ipch
+**/.vs/
+**/*.ipch
+**/*.iobj
+**/*.ipdb
+
+# ========== Visual Studio 编译输出 ==========
+# 编译生成的目录
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+**/bin/
+**/obj/
+
+# 用户特定文件（每个人的 VS 设置不同）
+**/*.suo
+**/*.user
+**/*.userosscache
+**/*.sln.docstates
+
+# ========== 通用临时文件 ==========
+*.tmp
+*.log
+*.cache
+*.ipch
