@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="F:/VS2026Project/Flame/SandBox/SandBox.vcxproj" Id="1ca8d2ea-7ae3-4a9c-a289-183d3be0172a">
+    <BuildType Project="Debug" />
+  </Project>
+  <Project Path="F:/VS2026Project/Flame/Flame.vcxproj" Id="baf52daf-d1c9-4397-a450-731dcb833396">
+    <BuildType Project="Debug" />
+  </Project>
+</Solution>
