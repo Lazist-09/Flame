@@ -17,6 +17,9 @@ project "Flame"
 	targetdir ("bin/" .. outputdir.."/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "flpch.h"
+	pchsource "Flame/src/flpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
