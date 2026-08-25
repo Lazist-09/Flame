@@ -1,4 +1,8 @@
 #include "Application.h"
+#include <iostream>
+
+#include "Events/APPEvent.h"
+#include "Log.h"
 
 namespace Flame {
 
@@ -12,6 +16,10 @@ namespace Flame {
 
 	void Application::Run()
 	{
+		WindowResizeEvent e(1280,700);
+		std::cout << e << std::endl;
+		FL_CLIENT_TRACE(e);
+
 		while (true)
 		{
 			// Update and render the application

@@ -1,4 +1,4 @@
-#include <Flame.h>
+#include <../../Flame/src/Flame.h>
 
 class Sandbox : public Flame::Application
 {

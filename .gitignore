@@ -20,6 +20,7 @@
 **/*.user
 **/*.userosscache
 **/*.sln.docstates
+/Hazel-reference
 
 # ========== 通用临时文件 ==========
 *.tmp
