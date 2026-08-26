@@ -9,6 +9,12 @@ workspace "Flame"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- include directories relative to root folder (solution directory), add GLFW constract to this list
+IncludeDirs = {}
+IncludeDirs["GLFW"] = "Flame/vendor/GLFW/include"
+
+include "Flame/vendor/GLFW"
+
 project "Flame"
 	location "Flame"
 	kind "SharedLib"
@@ -29,7 +35,13 @@ project "Flame"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"	
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDirs.GLFW}"
+	}
+	
+	links{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

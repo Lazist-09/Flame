@@ -2,7 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
-#include "Events/APPEvent.h"
+#include "Window.h"
 
 namespace Flame {
 
@@ -13,6 +13,10 @@ namespace Flame {
 		virtual ~Application();
 
 		void Run();
+
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	//要在客户端定义
