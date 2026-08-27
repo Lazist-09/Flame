@@ -7,3 +7,6 @@
 [submodule "Flame/vendor/GLFW"]
 	path = Flame/vendor/GLFW
 	url = https://github.com/Lazist-09/glfw
+[submodule "Flame/vendor/Imgui"]
+	path = Flame/vendor/Imgui
+	url = https://github.com/Lazist-09/imgui
