@@ -7,6 +7,8 @@
   </Configurations>
   <Project Path="Flame\Flame.vcxproj" Id="6A972E0D-D6AB-56BE-9F2D-FA1D0B0153EF">
   </Project>
+  <Project Path="Flame\vendor\Glad\Glad.vcxproj" Id="BDD6857C-A90D-870D-52FA-6C103E10030F">
+  </Project>
   <Project Path="Flame\vendor\GLFW\GLFW.vcxproj" Id="154B857C-0182-860D-AA6E-6C109684020F">
   </Project>
   <Project Path="Sandbox\Sandbox.vcxproj" Id="F4C124E3-60A1-A37E-69B9-2E55D5170AE0">

@@ -5,6 +5,8 @@
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
 
+#include <Glad/glad.h>
+
 namespace Flame
 {
 	static bool s_GLFWInitialized = false;
@@ -43,6 +45,8 @@ namespace Flame
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		FL_CORE_ASSERT(status,"Fail to initialize Glad")
 		SetVSync(true);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 

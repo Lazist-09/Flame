@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- include directories relative to root folder (solution directory), add GLFW constract to this list
 IncludeDirs = {}
 IncludeDirs["GLFW"] = "Flame/vendor/GLFW/include"
+IncludeDirs["Glad"] = "Flame/vendor/Glad/include"
 
 include "Flame/vendor/GLFW"
+include "Flame/vendor/Glad"
 
 project "Flame"
 	location "Flame"
@@ -36,13 +38,17 @@ project "Flame"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDirs.GLFW}"
+		"%{IncludeDirs.GLFW}",
+		"%{IncludeDirs.Glad}"
 	}
 	
 	links{
 		"GLFW",
-		"opengl32.lib"
+		"opengl32.lib",
+		"Glad"
 	}
+
+
 
 	filter "system:windows"
 		cppdialect "C++17"
@@ -53,7 +59,8 @@ project "Flame"
 		defines
 		{
 			"FL_PLATFORM_WINDOWS",
-			"FLAME_BUILD_DLL"
+			"FLAME_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 	
 		postbuildcommands

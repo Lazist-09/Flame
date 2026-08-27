@@ -3,6 +3,8 @@
 
 #include "Log.h"
 
+#include <glad/glad.h>
+
 namespace Flame {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -12,6 +14,9 @@ namespace Flame {
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		uint32_t id;
+		glGenVertexArrays(1, &id);
 	}
 
 	Application::~Application()
