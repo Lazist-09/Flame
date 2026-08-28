@@ -23,6 +23,8 @@ namespace Flame {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* overlay);
 
+		inline static Application& GetApplication() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -30,6 +32,9 @@ namespace Flame {
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+	private:
+		static Application* s_Instance;
 	};
 
 	//要在客户端定义

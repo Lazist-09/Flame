@@ -5,6 +5,7 @@
 #include "Core/Application.h"
 #include "Layer.h"
 #include "Core/Log.h"
+#include "ImGui/ImGuiLayer.h"
 
 //-------------入口点----------------------------
 #include "Core/EntryPoint.h"

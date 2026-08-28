@@ -13,7 +13,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDirs = {}
 IncludeDirs["GLFW"] = "Flame/vendor/GLFW/include"
 IncludeDirs["Glad"] = "Flame/vendor/Glad/include"
-IncludeDirs["ImGui"] = "Flame/vendor/Imgui/include"
+IncludeDirs["ImGui"] = "Flame/vendor/Imgui"
 
 include "Flame/vendor/GLFW"
 include "Flame/vendor/Glad"
