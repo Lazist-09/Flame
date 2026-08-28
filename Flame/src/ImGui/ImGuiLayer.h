@@ -10,7 +10,6 @@ namespace Flame {
 		ImGuiLayer();
 		~ImGuiLayer();
 
-
 		void OnAttach();
 		void OnDetach();
 		void OnUpdate();
@@ -18,7 +17,6 @@ namespace Flame {
 
 	private:
 		float m_Time = 0.0f;
-
 	};
 
 }
