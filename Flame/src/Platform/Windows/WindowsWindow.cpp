@@ -4,6 +4,7 @@
 #include "Events/APPEvent.h"
 #include "Events/KeyEvent.h"
 #include "Events/MouseEvent.h"
+#include "Core/KeyCodes.h"
 
 #include <Glad/glad.h>
 
@@ -76,19 +77,19 @@ namespace Flame
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 				switch (action)
 				{
-				case GLFW_PRESS:
+				case FL_PRESS:
 				{
 					KeyPressedEvent event(key, 0);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_RELEASE:
+				case FL_RELEASE:
 				{
 					KeyReleasedEvent event(key);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_REPEAT:
+				case FL_REPEAT:
 				{
 					KeyPressedEvent event(key, 1);
 					data.EventCallback(event);
@@ -102,13 +103,13 @@ namespace Flame
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 				switch (action)
 				{
-				case GLFW_PRESS:
+				case FL_PRESS:
 				{
 					MouseButtonPressedEvent event(button);
 					data.EventCallback(event);
 					break;
 				}
-				case GLFW_RELEASE:
+				case FL_RELEASE:
 				{
 					MouseButtonReleasedEvent event(button);
 					data.EventCallback(event);

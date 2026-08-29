@@ -1,6 +1,11 @@
 // Flame/src/Flame/Core/KeyCodes.h
 #pragma once
 
+// 输入动作状态
+#define FL_RELEASE                0
+#define FL_PRESS                  1
+#define FL_REPEAT                 2
+
 // 从 glfw3.h 复制，把 GLFW_KEY_ 前缀改成 FL_KEY_
 // 你可以直接复制 glfw3.h 里的所有键码定义，或者只复制常用的
 

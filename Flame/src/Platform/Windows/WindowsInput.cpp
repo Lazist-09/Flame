@@ -14,7 +14,7 @@ namespace Flame {
 			Application::GetApplication().GetWindow().GetNativeWindow());
 
 		int state = glfwGetKey(window, keycode);
-		return state == GLFW_PRESS || state == GLFW_REPEAT;
+		return state == FL_PRESS || state == FL_REPEAT;
 	}
 
 	bool WindowsInput::IsMouseButtonPressedImpl(int button)
@@ -23,7 +23,7 @@ namespace Flame {
 			Application::GetApplication().GetWindow().GetNativeWindow());
 
 		int state = glfwGetMouseButton(window, button);
-		return state == GLFW_PRESS;
+		return state == FL_PRESS;
 	}
 
 	std::pair<float, float> WindowsInput::GetMousePositionImpl()

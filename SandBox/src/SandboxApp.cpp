@@ -17,6 +17,11 @@ public:
 
 	void OnEvent(Flame::Event& event) override
 	{
+		if (event.GetEventType() == Flame::EventType::KeyPressed) {
+			Flame::KeyPressedEvent& e = (Flame::KeyPressedEvent&) event;
+			FL_CORE_INFO("Key pressed: {0}", e.GetKeyCode());
+		}
+		
 		FL_CORE_INFO("{0}", event);
 	}
 };
