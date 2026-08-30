@@ -148,8 +148,12 @@ namespace Flame
 
 	void WindowsWindow::OnUpdate()
 	{
-		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
+	}
+
+	void WindowsWindow::PollEvents()
+	{
+		glfwPollEvents();
 	}
 
 	uint32_t WindowsWindow::GetWidth() const

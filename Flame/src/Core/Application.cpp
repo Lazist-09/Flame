@@ -65,6 +65,7 @@ namespace Flame {
 	{
 		while (m_Running)
 		{
+		m_Window->PollEvents();
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			for (Layer* layer : m_LayerStack)

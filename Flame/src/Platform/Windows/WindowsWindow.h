@@ -11,6 +11,7 @@ namespace Flame
 		WindowsWindow(const WindowProps& props);
 		virtual ~WindowsWindow();
 
+		virtual void PollEvents() override;
 		virtual void OnUpdate() override;
 		inline virtual uint32_t GetWidth() const override;
 		inline virtual uint32_t GetHeight() const override;
