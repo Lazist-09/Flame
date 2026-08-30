@@ -14,10 +14,11 @@ IncludeDirs = {}
 IncludeDirs["GLFW"] = "Flame/vendor/GLFW/include"
 IncludeDirs["Glad"] = "Flame/vendor/Glad/include"
 IncludeDirs["ImGui"] = "Flame/vendor/Imgui"
+IncludeDirs["glm"] = "Flame/vendor/glm"
 
 include "Flame/vendor/GLFW"
 include "Flame/vendor/Glad"
-include "Flame/vendor/ImGui"
+include "Flame/vendor/Imgui"
 
 project "Flame"
 	location "Flame"
@@ -33,7 +34,12 @@ project "Flame"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+
+		-- GLM 是头文件库，将头文件加入解决方案便于浏览
+		"%{prj.name}/vendor/glm/glm/**.h",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -42,7 +48,8 @@ project "Flame"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDirs.GLFW}",
 		"%{IncludeDirs.Glad}",
-		"%{IncludeDirs.ImGui}"
+		"%{IncludeDirs.ImGui}",
+		"%{IncludeDirs.glm}"
 
 	}
 	
@@ -57,7 +64,7 @@ project "Flame"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "latest"
 		buildoptions "/utf-8"
 
@@ -75,17 +82,17 @@ project "Flame"
 	
 	filter "configurations:Debug"
 		defines "FL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "FL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "FL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 	
 project "Sandbox"
@@ -105,7 +112,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Flame/vendor/spdlog/include",
-		"Flame/src"
+		"Flame/src",
+		"%{IncludeDirs.glm}"
 	}
 
 	links
@@ -115,7 +123,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "latest"
 		buildoptions "/utf-8"
 
@@ -126,15 +134,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "FL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "FL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "FL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"

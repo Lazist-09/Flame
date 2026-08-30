@@ -1,12 +1,12 @@
 [submodule "Flame/vendor/spdlog"]
 	path = Flame/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Flame/vender/GLFW"]
-	path = Flame/vender/GLFW
-	url = https://github.com/Lazist-09/glfw
 [submodule "Flame/vendor/GLFW"]
 	path = Flame/vendor/GLFW
 	url = https://github.com/Lazist-09/glfw
 [submodule "Flame/vendor/Imgui"]
 	path = Flame/vendor/Imgui
 	url = https://github.com/Lazist-09/imgui
+[submodule "Flame/vendor/glm"]
+	path = Flame/vendor/glm
+	url = https://github.com/g-truc/glm

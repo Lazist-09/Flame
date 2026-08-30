@@ -21,9 +21,13 @@ project "Glad"
 	filter "system:windows"
 
 		systemversion "latest"
-		staticruntime "On" --staticly linking the runtime library
+		staticruntime "off"
 
-		
+	filter {"system:windows", "configurations:Debug"}
+		runtime "Debug"
 
-	filter {"system:windows",	"configurations:Release"}
-		buildoptions "/MT"
+	filter {"system:windows", "configurations:Release"}
+		runtime "Release"
+
+	filter {"system:windows", "configurations:Dist"}
+		runtime "Release"
