@@ -7,6 +7,8 @@
 #include "Events/Event.h"
 #include "Events/APPEvent.h"
 
+#include "ImGui/ImGuiLayer.h"
+
 
 namespace Flame {
 
@@ -30,6 +32,7 @@ namespace Flame {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer = nullptr;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

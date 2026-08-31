@@ -1,16 +1,19 @@
 #include "flpch.h"
 #include "ImGuiLayer.h"
 
+#include "imgui.h"
+#include "imgui_internal.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include "imgui.h"
-#include "imgui_internal.h"
-#include "GLFW/glfw3.h"
-#include "glad/glad.h"
-
 #include "Core/Application.h"
 #include "Platform/OpenGL/Framebuffer.h"
+
+//TEMPORARY
+#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+
+
 
 namespace Flame {
 
@@ -26,40 +29,35 @@ namespace Flame {
 	void ImGuiLayer::OnAttach()
 	{
 
+		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
-		io.IniFilename = "editor_layout.ini";
+		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+		io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
+		//io.ConfigViewportsNoAutoMerge = true;
+		//io.ConfigViewportsNoTaskBarIcon = true;
 
-		// 允许用 Tab/方向键导航 UI,flag在glfw的init自动处理
-		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-		io.ConfigDpiScaleFonts = true;
-		io.ConfigDpiScaleViewports = true;
-
+		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
+		//ImGui::StyleColorsLight();
 
+		// When viewports are enabled we tweak WindowRounding/WindowBg so platform windows can look identical to regular ones.
 		ImGuiStyle& style = ImGui::GetStyle();
-		style.WindowRounding = 0.0f;
-		style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+		{
+			style.WindowRounding = 0.0f;
+			style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+		}
 
 		Application& app = Application::GetApplication();
 		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
-		m_Framebuffer = std::make_unique<Framebuffer>(app.GetWindow().GetWidth(), app.GetWindow().GetHeight());
 
 		ImGui_ImplGlfw_InitForOpenGL(window, true);
 		ImGui_ImplOpenGL3_Init("#version 410");
 
-		const ImGuiPlatformIO& platformIO = ImGui::GetPlatformIO();
-		FL_CORE_INFO(
-			"ImGui diagnostics: Viewports={0}, PlatformHasViewports={1}, RendererHasViewports={2}, CreateWindow={3}, RenderWindow={4}",
-			(io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) != 0,
-			(io.BackendFlags & ImGuiBackendFlags_PlatformHasViewports) != 0,
-			(io.BackendFlags & ImGuiBackendFlags_RendererHasViewports) != 0,
-			platformIO.Platform_CreateWindow != nullptr,
-			platformIO.Platform_RenderWindow != nullptr
-		);
 	}
 
 	void ImGuiLayer::OnDetach()
@@ -69,74 +67,31 @@ namespace Flame {
 		ImGui::DestroyContext();
 	}
 
-	void ImGuiLayer::OnUpdate()
+	void ImGuiLayer::OnImGuiRender()
 	{
+		static bool show = true;
+		ImGui::ShowDemoWindow(&show);
+	}
+
+	void ImGuiLayer::Begin() {
+
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
+		// DockSpace 必须在各个 Layer 的窗口之前提交，窗口才能正常停靠。
+		SetupDockLayout();
+		ImGui::DockSpaceOverViewport(ImGui::GetID("FlameDockSpace"), ImGui::GetMainViewport());
+
+	}
+
+	void ImGuiLayer::End() {
 
 		// 设置显示区域和 DeltaTime
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::GetApplication();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(),
 			(float)app.GetWindow().GetHeight());
-
-		float time = (float)glfwGetTime();
-		io.DeltaTime = m_Time > 0.0f ? (time - m_Time) : (1.0f / 60.0f);
-		m_Time = time;
-
-		// 新版需要三行 NewFrame（顺序不能变）
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-
-		const ImGuiID dockspaceID = ImGui::GetID("FlameDockSpace");
-		SetupDockLayout();
-		ImGui::DockSpaceOverViewport(dockspaceID, ImGui::GetMainViewport());
-
-		ImGui::Begin("Viewport");
-		const ImVec2 viewportSize = ImGui::GetContentRegionAvail();
-		const float viewportDpiScale = ImGui::GetWindowDpiScale();
-		if (viewportSize.x > 0.0f && viewportSize.y > 0.0f &&
-			(viewportSize.x != m_ViewportWidth || viewportSize.y != m_ViewportHeight ||
-				viewportDpiScale != m_ViewportDpiScale))
-		{
-			m_ViewportWidth = viewportSize.x;
-			m_ViewportHeight = viewportSize.y;
-			m_ViewportDpiScale = viewportDpiScale;
-			m_Framebuffer->Resize(
-				static_cast<uint32_t>(viewportSize.x * viewportDpiScale),
-				static_cast<uint32_t>(viewportSize.y * viewportDpiScale));
-		}
-
-		m_Framebuffer->Bind();
-		glClearColor(0.08f, 0.10f, 0.14f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-		m_Framebuffer->Unbind();
-
-		GLFWwindow* window = static_cast<GLFWwindow*>(app.GetWindow().GetNativeWindow());
-		int framebufferWidth = 0;
-		int framebufferHeight = 0;
-		glfwGetFramebufferSize(window, &framebufferWidth, &framebufferHeight);
-		glViewport(0, 0, framebufferWidth, framebufferHeight);
-
-		ImGui::Image(ImTextureRef(static_cast<ImTextureID>(m_Framebuffer->GetColorAttachmentRendererID())), viewportSize, ImVec2(0, 1), ImVec2(1, 0));
-		ImGui::End();
-
-		ImGui::Begin("Scene Hierarchy");
-		ImGui::Text("Scene");
-		ImGui::BulletText("Camera");
-		ImGui::BulletText("ExampleLayer");
-		ImGui::End();
-
-		ImGui::Begin("Properties");
-		ImGui::Text("Select an entity to inspect its properties.");
-		ImGui::End();
-
-		ImGui::Begin("Console");
-		ImGui::Text("Flame console");
-		ImGui::End();
-
-		// 测试用 DemoWindow
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
 
 		// 渲染
 		ImGui::Render();
@@ -150,15 +105,10 @@ namespace Flame {
 			glfwMakeContextCurrent(backupCurrentContext);
 		}
 
-		static int lastViewportCount = 0;
-		const int viewportCount = ImGui::GetPlatformIO().Viewports.Size;
-		if (viewportCount != lastViewportCount)
-		{
-			FL_CORE_INFO("ImGui platform viewport count: {0}", viewportCount);
-			lastViewportCount = viewportCount;
-		}
-
+	
 	}
+
+	
 
 	void ImGuiLayer::SetupDockLayout()
 	{
@@ -190,18 +140,7 @@ namespace Flame {
 		ImGui::DockBuilderFinish(dockspaceID);
 	}
 
-	void ImGuiLayer::OnEvent(Event& event)
-	{
-		ImGuiIO& io = ImGui::GetIO();
-
-		if (io.WantCaptureMouse && event.IsInCategory(EventCategoryMouse))
-			event.Handled = true;
-
-		if (io.WantCaptureKeyboard && event.IsInCategory(EventCategoryKeyboard))
-			event.Handled = true;
-
-	}
-
+	
 	//void ImGuiLayer::Begin()
 	//{
 	//	ImGuiIO& io = ImGui::GetIO();

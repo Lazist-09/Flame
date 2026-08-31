@@ -1,4 +1,5 @@
 #include <../../Flame/src/Flame.h>
+#include <imgui.h>
 
 #include <glm/vec2.hpp>
 #include <glm/vec3.hpp>
@@ -43,7 +44,26 @@ public:
 
 	void OnUpdate() override
 	{
-		FL_CORE_INFO("ExampleLayer::Update");
+		//FL_CORE_INFO("ExampleLayer::Update");
+	}
+
+	void OnImGuiRender() override
+	{
+		if (ImGui::Begin("Scene Hierarchy"))
+			ImGui::Text("Scene Hierarchy");
+		ImGui::End();
+
+		if (ImGui::Begin("Properties"))
+			ImGui::Text("Properties");
+		ImGui::End();
+
+		if (ImGui::Begin("Console"))
+			ImGui::Text("Console");
+		ImGui::End();
+
+		if (ImGui::Begin("Viewport"))
+			ImGui::Text("Viewport");
+		ImGui::End();
 	}
 
 	void OnEvent(Flame::Event& event) override

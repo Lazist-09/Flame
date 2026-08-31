@@ -38,6 +38,9 @@ namespace Flame {
 	{
 		m_LayerStack.PushOverlay(overlay);
 		
+
+		if (auto* imGuiLayer = dynamic_cast<ImGuiLayer*>(overlay))
+			m_ImGuiLayer = imGuiLayer;
 	}
 
 	void Application::OnEvent(Event& e)
@@ -65,12 +68,28 @@ namespace Flame {
 	{
 		while (m_Running)
 		{
-		m_Window->PollEvents();
+			m_Window->PollEvents();
 			glClear(GL_COLOR_BUFFER_BIT);
 
+			// Update all layers
 			for (Layer* layer : m_LayerStack)
+			{
 				layer->OnUpdate();
+			}
 
+			// ImGui begin (if present)
+			if (m_ImGuiLayer)
+				m_ImGuiLayer->Begin();
+
+			// Render ImGui for all layers
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnImGuiRender();
+			}
+
+			// ImGui end (if present)
+			if (m_ImGuiLayer)
+				m_ImGuiLayer->End();
 
 			auto [x, y] = Input::GetMousePosition();
 			FL_CORE_TRACE("{0},{1}", x, y);

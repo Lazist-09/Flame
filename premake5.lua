@@ -42,6 +42,8 @@ project "Flame"
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
+	removefiles "%{prj.name}/src/ImGui/ImGuiBuild.cpp"
+
 	includedirs
 	{
 		"%{prj.name}/src",
@@ -72,7 +74,8 @@ project "Flame"
 		{
 			"FL_PLATFORM_WINDOWS",
 			"FLAME_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"IMGUI_API=__declspec(dllexport)"
 		}
 	
 		postbuildcommands
@@ -113,6 +116,7 @@ project "Sandbox"
 	{
 		"Flame/vendor/spdlog/include",
 		"Flame/src",
+		"%{IncludeDirs.ImGui}",
 		"%{IncludeDirs.glm}"
 	}
 
@@ -129,7 +133,8 @@ project "Sandbox"
 
 		defines
 		{
-			"FL_PLATFORM_WINDOWS"
+			"FL_PLATFORM_WINDOWS",
+			"IMGUI_API=__declspec(dllimport)"
 		}
 	
 	filter "configurations:Debug"
